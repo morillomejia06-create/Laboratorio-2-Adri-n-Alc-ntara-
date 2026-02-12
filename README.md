@@ -9,7 +9,7 @@ sudo apt update
 sudo apt upgrade -y
 
 # Ver repositorios configurados
-cat /etc/apt/sources.list/ubuntu.sources
+cat /etc/apt/sources.list.d/ubuntu.sources
 
 # Buscar bashtop en los repositorios
 apt search bashtop
