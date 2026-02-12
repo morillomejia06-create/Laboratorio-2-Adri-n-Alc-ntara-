@@ -11,6 +11,9 @@ sudo apt upgrade -y
 # Ver repositorios configurados
 cat /etc/apt/sources.list.d/ubuntu.sources
 
+# Para ver los permisos de esos repositorios
+ls -la /etc/apt/sources.list.d/
+
 # Buscar bashtop en los repositorios
 apt search bashtop
 
