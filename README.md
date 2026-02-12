@@ -9,8 +9,7 @@ sudo apt update
 sudo apt upgrade -y
 
 # Ver repositorios configurados
-cat /etc/apt/sources.list
-ls /etc/apt/sources.list.d/
+cat /etc/apt/sources.list/ubuntu.sources
 
 # Buscar bashtop en los repositorios
 apt search bashtop
@@ -29,7 +28,6 @@ sudo snap remove bashtop
 
 # Eliminar dependencias no utilizadas
 sudo apt autoremove -y
-sudo apt autoclean
 
 
 # ==============================
@@ -50,7 +48,7 @@ crontab -e
 ls /tmp
 
 # Programar eliminación de /tmp en 1 minuto con at
-echo "rm -rf /tmp/*" | at now + 1 minute
+sudo echo "rm -rf /tmp/*" | sudo at now + 1 minute
 
 # Ver tareas programadas con at
 atq
@@ -73,13 +71,16 @@ sudo fdisk /dev/sdb
 sudo mkfs.ext4 /dev/sdb1
 
 # Crear carpeta en el Escritorio
-mkdir ~/Escritorio/disco20GB
+mkdir ~/Desktop/disk20GB
 
 # Montar el disco en el Escritorio
-sudo mount /dev/sdb1 ~/Escritorio/disco20GB
+sudo mount /dev/sdb1 ~/Desktop/disk20GB
+
+# Para verificar que se encuentre
+df -h
 
 # Entrar al directorio montado
-cd ~/Escritorio/disco20GB
+cd ~/Desktop/disk20GB
 
 # Crear archivo solicitado
 touch AdrianAlcantara.txt
